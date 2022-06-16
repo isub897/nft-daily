@@ -23,7 +23,9 @@
 }
 
 .topnav a:hover {
+    transition: .1s;
     background-color: #f3a333;
     border-radius: 20px;
     color: #fff;
+
   }
