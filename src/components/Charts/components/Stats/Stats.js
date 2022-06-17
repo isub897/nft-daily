@@ -1,5 +1,6 @@
 import React from "react";
 import './Stats.css'
+import ether from './ether.png'
 
 const Stats = ({list}) => {
     return(
@@ -9,7 +10,7 @@ const Stats = ({list}) => {
                 <tr>
                     <th className="left-end">Collection</th>
                     <th>Volume</th>
-                    <th>Trades</th>
+                    <th>Total Trades</th>
                     <th className="right-end">Floor</th>
                 </tr>   
                 </tbody>
@@ -23,7 +24,10 @@ const Stats = ({list}) => {
                                 <td>{item.collection_name}</td>
                                 <td>{item.volume}</td>
                                 <td>{item.trades}</td>
-                                <td>{item.floor}</td>
+                                <td className= 'floor'><div className="floor-block">
+                                <img className='eth' src={ether} />{item.floor.slice(1)}
+                                </div></td>
+                                {/* <img src={ether} /> */}
                             </tr>
                         )
                 })
