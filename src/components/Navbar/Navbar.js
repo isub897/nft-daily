@@ -5,8 +5,7 @@ const Navbar = () => {
     return(
         <nav className="topnav shadow-5">
             <div className="logo">
-                {/* <a class="active" href="#home">Home</a> */}
-                <img className="ba" alt="logo" src="" />
+                <img alt="logo" src="" />
             </div>
             <div className="routes">
                 <a href="#news">News</a> 

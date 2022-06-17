@@ -1,12 +1,13 @@
 .topnav {
     display: flex;
     background-color: #fff;
+
 }
 
 .routes {
     width: 80%;
     text-align: right;
-    padding: 1em;
+    padding: 30px;
 }
 
 .logo {
@@ -16,6 +17,7 @@
 }
 
 .topnav a {
+    font-size: 18px;
     padding: 1em;
     text-decoration: none;
     font-weight: 500;
@@ -23,9 +25,8 @@
 }
 
 .topnav a:hover {
-    transition: .1s;
+    transition: .3s;
     background-color: #f3a333;
     border-radius: 20px;
     color: #fff;
-
   }
