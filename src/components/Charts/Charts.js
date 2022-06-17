@@ -7,7 +7,7 @@ class Charts extends React.Component {
     constructor() {
         super();
         this.state = {
-            stats: "24hr",
+            route: "24hr",
             list: [{
                 collection_name: "",
                 collection_url: "",
@@ -19,14 +19,18 @@ class Charts extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000')
+        fetch('http://localhost:3000/24hr')
         .then(response => response.json())
         .then(data => {
         this.setState({list: data})})
     }
 
-    onRouteChange = () => {
-        console.log("made it here")
+    onRouteChange = (route) => {
+        const url = "http://localhost:3000/" + route;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+        this.setState({list: data})})
     }
 
 
