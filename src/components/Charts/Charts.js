@@ -7,22 +7,35 @@ class Charts extends React.Component {
     constructor() {
         super();
         this.state = {
-            stats: "24hr"
+            stats: "24hr",
+            list: [{
+                collection_name: "",
+                collection_url: "",
+                floor: "",
+                trades: "",
+                volume: ""
+            }]
         }
     }
 
     componentDidMount() {
         fetch('http://localhost:3000')
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+        this.setState({list: data})})
     }
+
+    onRouteChange = () => {
+        console.log("made it here")
+    }
+
 
     render(){
         return(
             <div className="main">
                 <Title />
-                <Dropdown />
-                <Stats />
+                <Dropdown onRouteChange = {this.onRouteChange} />
+                <Stats list = {this.state.list}/>
                 <div />
             </div>
         )
