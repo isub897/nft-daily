@@ -1,0 +1,47 @@
+.slideshow {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container {
+    width: 250px;
+    margin-right: 20px;
+}
+
+.text-container > h1 {
+    font-weight: 500;
+}
+
+.image-container {
+    overflow: hidden;
+    height: 500px;
+    width: 700px;
+    margin: 0;
+    animation: fade 16s infinite;
+}
+
+.image-container:nth-child(1) {
+background-image: url("./image1.jpg") ;
+}
+
+@keyframes fade {
+0% {background-image: url("./image1.jpg") ;}
+25% {background-image: url("./image2.jpg") ;}
+50% {background-image: url("./image3.jpg") ;}
+75% {background-image: url("./image4.jpg") ;}
+100% {background-image: url("./image1.jpg") ;}
+}
+
+.author {
+    display: flex;
+}
+
+.author > img {
+    justify-content: center;
+}
+
+.article-description {
+    padding-top: 20px;
+    max-width: auto;
+}

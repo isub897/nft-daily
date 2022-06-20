@@ -1,18 +1,34 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Charts from './components/Charts/Charts';
+import News from './components/News/News';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      route: "news"
+    }
+  }
 
-      <Navbar />
-      <Charts />
-      {/* <Navbar />
-      <TitleArea />
-      <Collections /> */}
-    </div>
-  );
+  onRouteChange = (route) => {
+    this.setState({route: route})
+  }
+  
+
+  render() {
+    return (
+      <div className="App">
+      <Navbar onRouteChange={this.onRouteChange} />
+      {this.state.route === "news"
+        ?<News />
+        :<Charts />
+      }
+      </div>
+    );
+  }
+
 }
 
 export default App;
