@@ -1,12 +1,20 @@
+.main {
+    display: inline-block;
+}
+
 .slideshow {
     padding-top: 100px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: auto;
+
 }
 
 .text-container {
     width: 250px;
     margin-right: 20px;
+    animation: fade 16s infinite;
 }
 
 .text-container > h1 {
@@ -18,14 +26,10 @@
     height: 500px;
     width: 700px;
     margin: 0;
-    animation: fade 16s infinite;
+    animation: fadeImage 16s infinite;
 }
 
-.image-container:nth-child(1) {
-background-image: url("./image1.jpg") ;
-}
-
-@keyframes fade {
+@keyframes fadeImage {
 0% {background-image: url("./image1.jpg") ;}
 25% {background-image: url("./image2.jpg") ;}
 50% {background-image: url("./image3.jpg") ;}
