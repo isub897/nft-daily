@@ -1,42 +1,29 @@
 import React from "react";
 import './ImageSlider.css'
+import image1 from './image1.jpg'
+import image2 from './image2.jpg'
+import image3 from './image3.jpg'
+import image4 from './image4.jpg'
 
 const ImageSlider = () => {
     return(
-        <div className="main">
-            <div className="slideshow">
-                <div className="text-container">
-
-
-
-
-
-                    <h1 >Title of the story</h1>
-                    <div className="author b--orange">
-                        <img alt="w-30" src="" />
-                        <p className="author-name w-70">Author's name</p>
+        <div className="image-slider">
+            <div className="whole-container">
+                <div className="description-container">
+                    <h1 className="ma0">Title</h1>
+                    <div className="author">
+                        <img alt="author" src={image2} />
+                        <p className="author-name">Johnny Allen</p>
                     </div>
-                    <div className="article-description">
-                        <p>heres a little something about the article that youi are abvout to read about.  good luck and i hope u enjoy the read ladies and gentlemen.  again best of luck to you all.</p>
-                    </div>
-                    <div className="tc">
-                        <button type="button" className="pa3 ma4" >Read More >></button>
-                    </div>
-
-
-
-
-
-
-
+                    <p className="about-article">This is meant to be the description of the article and it will give you a little taste of what is inside the article so we hope that you enjoy it and get back to us soon about your read.
+                    </p>
+                    <button type="button" className="pa3 mt5">Read More</button>
                 </div>
-                <div className="image-container"></div>
-                {/* <p className="reference ba">Photos by Photographer's name</p> */}
-                
+                <div className="image-container">
+                    <img alt="article-image" src={image3} />
+                    <p className="ref-photo">Reference to the photographer</p>
+                </div>
             </div>
-            <div className="reference">
-                <p>image by photographer</p>
-            </div>  
         </div>
     )
 }
