@@ -50,11 +50,11 @@
 }
 
 .story:hover > .story-description > p {
-    color: blue;
+    color: #f3a333;
 }
 
 .story:hover > .story-description > h3 {
-    color: blue;
+    color: #f16821;
     text-decoration: underline;
 }
 

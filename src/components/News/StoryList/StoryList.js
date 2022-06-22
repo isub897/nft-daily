@@ -2,18 +2,36 @@ import React from "react";
 import './StoryList.css'
 
 const StoryList = ({storyData}) => {
+
+    const description1 = "What is the model based on? How is it different from the prevailing system of operation?";
+
+    const description2 = "The cryptocurrency industry was built on swagger, enthusiasm and optimism. All three are in short supply these days, as losses and layoffs mount.";
+
+    const description3 = "A bitcoin exchange-traded fund allows investors to gain exposure to the biggest cryptocurrency by market cap without actually owning any.";
+
+
+
+
+    const descriptionArray = [
+        description1, 
+        description2,
+        description3,
+        description1,
+        description1
+    ]
+
     return(
-        <div className="story-list ba b--red">
+        <div className="story-list">
             {
                 storyData.map((item, index) => {
                     if (index>4) {return}
                     return (
                     <a href={item.url}  key={index}>
-                        <div className="story ba b--green">
-                            <img alt="story" src="" />
+                        <div className="story shadow-5 br3 grow">
+                            <img alt="story" src="" className="ba"/>
                             <div className="story-description">
                                 <h3>{item.title}</h3>
-                                <p>this is a description of the storyt that your about to click on</p>
+                                <p>{descriptionArray[index]}</p>
                                 <div className="media-links">
                                     <p>{item.source}</p>
                                     {/* <p>author name</p> */}
