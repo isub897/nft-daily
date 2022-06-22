@@ -2,7 +2,7 @@ import React from "react";
 import './Stats.css'
 import ether from './ether.png'
 
-const Stats = ({list}) => {
+const Stats = ({urlRedirect, list}) => {
     return(
         <div className ="stats mt5">
             <table id="customers">
@@ -19,16 +19,16 @@ const Stats = ({list}) => {
 
                     list.map((item, index) => {
                         return (
-                            <tr 
-                            key = {index}>
-                                <td>{item.collection_name}</td>
-                                <td>{item.volume}</td>
-                                <td>{item.trades}</td>
-                                <td className= 'floor'><div className="floor-block">
-                                <img className='eth' src={ether} />{item.floor.slice(1)}
-                                </div></td>
-                                {/* <img src={ether} /> */}
-                            </tr>
+                                <tr key = {index} 
+                                onClick = {()=> urlRedirect(item.collection_url)}>
+                                    <td>{item.collection_name}</td>
+                                    <td>{item.volume}</td>
+                                    <td>{item.trades}</td>
+                                    <td className= 'floor'><div className="floor-block">
+                                    <img className='eth' src={ether} />{item.floor.slice(1)}
+                                    </div></td>
+                                    {/* <img src={ether} /> */}
+                                </tr>
                         )
                 })
                 }

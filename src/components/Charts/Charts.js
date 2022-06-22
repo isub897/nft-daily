@@ -8,13 +8,8 @@ class Charts extends React.Component {
         super();
         this.state = {
             route: "24hr",
-            list: [{
-                collection_name: "",
-                collection_url: "",
-                floor: "",
-                trades: "",
-                volume: ""
-            }]
+            isLoaded: false,
+            list: []
         }
     }
 
@@ -22,7 +17,8 @@ class Charts extends React.Component {
         fetch('http://localhost:3000/24hr')
         .then(response => response.json())
         .then(data => {
-        this.setState({list: data})})
+        this.setState({isLoaded: true});
+        this.setState({list: data})});
     }
 
     onRouteChange = (route) => {
@@ -33,13 +29,20 @@ class Charts extends React.Component {
         this.setState({list: data})})
     }
 
+    urlRedirect = (route) => {
+        window.location = route;
+    }
+
 
     render(){
         return(
             <div className="main">
                 <Title />
                 <Dropdown onRouteChange = {this.onRouteChange} />
-                <Stats list = {this.state.list}/>
+                {this.state.isLoaded
+                    ?<Stats urlRedirect = {this.urlRedirect} list = {this.state.list}/>
+                    :<div></div>
+                } 
                 <div />
             </div>
         )
