@@ -26,7 +26,7 @@ const StoryList = ({storyData}) => {
         <div className="story-list">
             {
                 storyData.map((item, index) => {
-                    if (index>4) {return}
+                    if (index>4) {return <div key={index}></div>}
                     return (
                     <a href={item.url}  key={index}>
                         <div className="story shadow-5 br3 grow">
