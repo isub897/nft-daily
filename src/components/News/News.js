@@ -20,13 +20,17 @@ class News extends React.Component {
         })
     }
 
+    urlRedirect = (route) => {
+        window.location = route;
+    }
+
     render() {
 
         return(
             <div className="news">
                 {this.state.dataLoaded
                     ?<div>
-                        <ImageSlider storyData={this.state.storyData}/>
+                        <ImageSlider urlRedirect={this.urlRedirect} storyData={this.state.storyData}/>
                         <StoryList storyData={this.state.storyData}/>
                     </div>
                     :<div>Loading...</div>

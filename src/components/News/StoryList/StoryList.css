@@ -14,10 +14,12 @@
 
 .story > img {
     width: 20%;
+    border-radius: 10px 0 0 10px;
 }
 
 .story-description {
     padding-left: 2em;
+    padding-right: 2em;
     display: inline-block;
     text-align: left;
     width: 80%;

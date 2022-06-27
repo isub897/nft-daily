@@ -1,0 +1,26 @@
+.About  {
+    width: 100%;
+}
+
+.whole-about {
+    display: inline-block;
+}
+
+.whole-about {
+    padding: 5em;
+}
+
+.image-about > img {
+    border-radius: 10px;
+    max-width: 500px;
+    height: auto;
+}
+
+.description-about {
+    max-width: 500px;
+}
+
+.description-about > p {
+    text-align: left;
+}
+

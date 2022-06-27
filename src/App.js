@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Charts from './components/Charts/Charts';
 import News from './components/News/News';
+import About from './components/About/About';
 import React from 'react';
 
 class App extends React.Component {
@@ -23,7 +24,10 @@ class App extends React.Component {
       <Navbar onRouteChange={this.onRouteChange} />
       {this.state.route === "news"
         ?<News />
-        :<Charts />
+        :(this.state.route === "charts"
+          ?<Charts />
+          :<About />
+        )
       }
       </div>
     );
