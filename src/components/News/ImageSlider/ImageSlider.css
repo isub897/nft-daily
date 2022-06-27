@@ -12,6 +12,28 @@
     height: auto;
 }
 
+.whole-container:hover {
+    cursor: pointer;
+}
+
+.whole-container:hover > .description-container > h1 {
+    color: #f16821;
+    text-decoration: underline;
+}
+
+.whole-container:hover > .description-container > p {
+    color: #f3a333;
+}
+
+.whole-container:hover > .description-container > .author {
+    color: grey;
+}
+
+.whole-container > .description-container > .author:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .description-container {
     width: 30%;
     padding: 1em 3em 3em 3em;
@@ -24,8 +46,12 @@
 
 .image-container > img {
     border-radius: 10px;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+}
+
+.image-container > p:hover {
+    text-decoration: underline;
 }
 
 .author {
@@ -47,3 +73,20 @@
     text-align: left;
     width: 100%;
 } 
+
+button {
+    font-weight: 700;
+    border-radius: 10px;
+    border-width: 0px;
+    border-color: #cd4545;
+    background-color: #fff;
+
+}
+
+button:hover {
+    transition: .2s;
+    cursor: pointer;
+    background-color: #f16821;
+    color: #fff
+}
+

@@ -12,7 +12,8 @@ const Navbar = ({onRouteChange}) => {
                     href="#news">News</a> 
                 <a  onClick={()=> onRouteChange("charts")}
                     href="#charts">Charts</a>
-                <a href="#projects">Projects</a>
+                <a  onClick={()=> onRouteChange("about")} 
+                href="#projects">About</a>
             </div>
         </nav>
 
