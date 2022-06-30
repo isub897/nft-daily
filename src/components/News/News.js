@@ -1,6 +1,7 @@
 import React from "react";
 import ImageSlider from "./ImageSlider/ImageSlider";
 import StoryList from "./StoryList/StoryList";
+import './News.css'
 
 class News extends React.Component {
     constructor() {

@@ -1,6 +1,7 @@
 import React from "react";
 import './Stats.css'
 import ether from './ether.png';
+import '../../../../../node_modules/bootstrap/dist/css/bootstrap-grid.css'
 
 
 const Stats = ({urlRedirect, list}) => {

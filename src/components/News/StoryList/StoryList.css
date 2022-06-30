@@ -12,8 +12,8 @@
     margin: 3em 0em;
 }
 
-.story > img {
-    width: 20%;
+.story-list > a > .story > img {
+    width: 30%;
     border-radius: 10px 0 0 10px;
 }
 
@@ -64,3 +64,110 @@ a {
     text-decoration: none;
     color: black;
 }
+
+@media (max-width: 576px) {
+    
+    .story-list {
+        margin-top: 0px;
+        padding: 0 5px;
+        width: 100%;
+    }
+
+    .story-list > a > .story > .story-description > h3 {
+        font-size: 1rem;
+    }
+
+    .story-list > a > .story > img {
+        width: 40%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .story-list > a > .story > .story-description > p {
+        font-size: .0rem;
+    }
+
+    .story-list > a > .story > .story-description > .media-links > p {
+        font-size: .9rem;
+    } 
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .story-list {
+        border-color: red;
+        width: 80%;
+    }
+
+    .story-list > a > .story > .story-description > h3 {
+        font-size: 1rem;
+    }
+
+    .story-list > a > .story > img {
+        width: 40%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .story-list > a > .story > .story-description > p {
+        font-size: .7rem;
+    }
+
+    .story-list > a > .story > .story-description > .media-links > p {
+        font-size: .8rem;
+    } 
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .story-list {
+        width: 70%;
+    }
+
+    .story-list > a > .story > .story-description > h3 {
+        font-size: 1rem;
+    }
+
+    .story-list > a > .story > img {
+        width: 40%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .story-list > a > .story > .story-description > p {
+        font-size: .8rem;
+    }
+
+    .story-list > a > .story > .story-description > .media-links > p {
+        font-size: .8rem;
+    } 
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .story-list > a > .story > img {
+        width: 40%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .story-list > a > .story > .story-description > p {
+        font-size: .8rem;
+    }
+
+    .story-list > a > .story > .story-description > .media-links > p {
+        font-size: .8rem;
+    }    
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+    .story-list > a > .story > img {
+        width: 30%;
+        border-radius: 10px 0 0 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+        .story-list > a > .story > .story-description > .media-links {
+        position: absolute;
+        bottom: 0px;
+    }
+}
+

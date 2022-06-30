@@ -1,92 +1,368 @@
- .image-slider {
-    width: 100%;
-    height: auto;
-    padding: 70px;
-    display: flex;
-    justify-content: center;
+/* main CSS controllers ------------------------------------------------------------------------ */
+.image-slider {
+    /* padding-top: 4rem */
+    padding: 4rem 0 4rem 0;
 }
 
-.whole-container {
-    display: flex;
-    width: 60%;
-    height: auto;
-}
-
-.whole-container:hover {
-    cursor: pointer;
-}
-
-.whole-container:hover > .description-container > h1 {
-    color: #f16821;
-    text-decoration: underline;
-}
-
-.whole-container:hover > .description-container > p {
-    color: #f3a333;
-}
-
-.whole-container:hover > .description-container > .author {
-    color: grey;
-}
-
-.whole-container > .description-container > .author:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.description-container {
-    width: 30%;
-    padding: 1em 3em 3em 3em;
-}
-
-.image-container {
-    display: inline-block;
-    width: 70%;
-}
-
-.image-container > img {
+.image-slider > .row {
     border-radius: 10px;
-    width: 80%;
-    height: 80%;
 }
 
-.image-container > p:hover {
-    text-decoration: underline;
+
+.image-slider > .row > .description-container > h1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
 }
 
-.author {
-    display: flex;
+.image-slider > .row > .description-container > .author {
     justify-content: center;
-    margin-right: 30px;
+    display: flex;
 }
 
-.author > img {
-    max-width: 40px;
-    max-height: 40px;
+.image-slider > .row > .description-container > .author > img {
+    width: 40px;
+    height: 40px;
     border-radius: 40px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
 }
 
-.about-article {
+.image-slider > .row > .description-container > p {
+    margin-left: 3rem;
+    margin-right: 3rem;
     text-align: left;
-    width: 100%;
-} 
+}
 
-button {
-    font-weight: 700;
+.image-slider > .row > .description-container > button {
     border-radius: 10px;
     border-width: 0px;
-    border-color: #cd4545;
     background-color: #fff;
+    font-weight: 500;
+    margin: 3em 0 1em 0em;
+}
+
+
+
+.image-slider > .row > .image-container {
+    padding-right: 0px;
+}
+
+.image-slider > .row > .image-container > img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 0px;
+}
+
+.image-slider > .row > .image-container > .photo-ref {
+    display: flex;
+    justify-content: center;
+    }
+
+.image-slider > .row > .image-container:hover > .photo-ref > p {
+    color: grey;
+}
+
+.image-slider > .row > .image-container > .photo-ref > p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* hover components ------------------------------------------------------------------------------------*/
+.image-slider > .row:hover {
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 0 6px #f3a333; 
+}
+
+.image-slider > .row > .description-container:hover > h1 {
+    color: #f16821;
 
 }
 
-button:hover {
+.image-slider > .row > .description-container:hover > p {
+    color: #f3a333;
+} 
+
+.image-slider > .row > .description-container:hover > .author {
+    color: grey;
+}
+
+.image-slider > .row > .description-container > .author:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.image-slider > .row > .description-container > h1:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.image-slider > .row > .description-container > button:hover {
     transition: .2s;
     cursor: pointer;
-    background-color: #f16821;
-    color: #fff
+    background-color: #f3a333;
+    color: #fff;
 }
+
+
+/* Media queries -----------------------------------------------------------------------------------*/
+/* col-xs */
+@media (max-width: 576px) { 
+
+    .image-slider {
+        padding-bottom: 0px
+    }
+
+    .image-slider > .row {
+        width: fit-content;
+        position:relative;
+    }
+
+    .image-slider > .row > .description-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .image-slider > .row > .description-container > h1 {
+        margin-top: .5em;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        font-size: 1.3rem;
+        margin-bottom: 0px;
+        padding:.3rem;
+    
+    }
+
+    .image-slider > .row > .description-container > .author {
+        justify-content: center;
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-top: .5em;
+    }
+
+    .image-slider > .row > .description-container > p {
+        font-size: 0rem;
+        
+    }
+
+    .image-slider > .row > .description-container > button {
+        padding: .7rem;
+        margin: .7rem 0 1em 0em;
+    }
+
+    .image-slider > .row > .image-container {
+        padding-right: 2px;
+        padding-left: 12px;
+        width: 100%;
+    }
+
+    .image-slider > .row {
+        margin-right: 1px;
+    }
+
+    .image-slider > .row > .image-container > .photo-ref {
+        font-size: 0.8em;
+        margin-bottom: 0px;
+        margin-top: 1px;
+    }
+
+    .image-slider {
+        border-color: red;
+    }
+}
+
+/* col-sm */
+@media (min-width: 576px) and (max-width: 768px) {
+
+    .image-slider {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+    }
+
+    .image-slider > .row {
+        width: 576px;
+        position: relative;
+        left: 4%;
+    }
+
+    .image-slider > .row > .description-container > h1 {
+        margin-top: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0px;
+    
+    }
+
+    .image-slider > .row > .description-container > p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        text-align: left;
+        font-size: .0rem;
+        
+    }
+
+    .image-slider > .row > .description-container > button {
+        padding: .7rem;
+        margin: 2em 0 1em 0em;
+    }
+
+    .image-slider > .row > .image-container > .photo-ref {
+        margin-bottom: 0px;
+        margin-top: 1px;
+    }
+
+    .image-slider {
+        border-color: blue;
+    }
+
+}
+
+/* col-md */
+  @media (min-width: 768px) and (max-width: 992px) { 
+
+    .image-slider {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+    }
+
+    .image-slider > .row {
+        width: 576px;
+        position: relative;
+        left: 15%;
+    }
+
+    .image-slider > .row > .description-container > h1 {
+        margin-top: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0px;
+    
+    }
+
+    .image-slider > .row > .description-container > p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        text-align: left;
+        font-size: .0rem;
+        
+    }
+
+    .image-slider > .row > .description-container > button {
+        padding: .7rem;
+        margin: 2em 0 1em 0em;
+    }
+
+    .image-slider > .row > .image-container > .photo-ref {
+        margin-bottom: 0px;
+        margin-top: 1px;
+    }
+    
+}
+
+/* col-lg */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .image-slider {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+    }
+
+    .image-slider > .row {
+        width: 768px;
+        position: relative;
+        left: 12%;
+    }
+
+    .image-slider > .row > .description-container > h1 {
+        margin-top: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.3rem;
+    
+    }
+    
+    .image-slider > .row > .description-container > p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        text-align: left;
+        font-size: .9rem;
+        
+    }
+
+    .image-slider > .row > .description-container > button {
+        padding: .7rem;
+        margin: 1em 0 1em 0em;
+    }
+
+}
+
+/* col-xl */
+@media (min-width: 1200px) and (max-width: 1400px) {  
+
+    .image-slider {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+    }
+
+    .image-slider > .row {
+        width: 992px;
+        position: relative;
+        left: 12%;
+    }
+
+    .image-slider > .row > .description-container > h1 {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 1rem;
+        font-size: 1.7rem;
+    
+    }
+    
+    .image-slider > .row > .description-container > p {
+        margin-left: 4rem;
+        margin-right: 3rem;
+        text-align: left;
+        font-size: .9rem;
+        
+    }
+
+    .image-slider > .row > .description-container > button {
+        margin: 2.5em 0 1em 0em;
+    }
+  } 
+
+  /* col-xxl */
+  @media (min-width: 1400px) {
+
+    .image-slider {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+    }
+
+    .image-slider > .row {
+        width: 1200px;
+        position: relative;
+        left: 12%;
+    }
+  }
 

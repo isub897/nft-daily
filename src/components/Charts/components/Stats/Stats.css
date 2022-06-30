@@ -39,7 +39,7 @@
   }
 
   #customers tr:hover {
-    transition: 300ms;
+    transition: 200ms;
     border-radius: 5px;
     box-shadow: 0 0 6px #f3a333;
   }
