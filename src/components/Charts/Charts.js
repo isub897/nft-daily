@@ -33,12 +33,33 @@ class Charts extends React.Component {
         window.location = route;
     }
 
+    onDropdown = () => {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    onClickChange = (event) => {
+
+        if (!(event.target.matches('.dropdown') || event.target.matches('.dropbtn'))) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+
 
     render(){
         return(
-            <div className="main">
+            <div
+                onClick={this.onClickChange} 
+                className="main">
                 <Title />
-                <Dropdown onRouteChange = {this.onRouteChange} />
+                <Dropdown onDropdown = {this.onDropdown} onRouteChange = {this.onRouteChange} />
                 {this.state.isLoaded
                     ?<Stats urlRedirect = {this.urlRedirect} list = {this.state.list}/>
                     :<div></div>
