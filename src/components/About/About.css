@@ -3,6 +3,7 @@
 }
 
 .whole-about {
+    text-align: center;
     display: inline-block;
 }
 
@@ -12,15 +13,42 @@
 
 .image-about > img {
     border-radius: 10px;
-    max-width: 500px;
+    /* max-width: 500px; */
+    width: fit-content;
     height: auto;
 }
 
 .description-about {
-    max-width: 500px;
+    /* max-width: 500px; */
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
+section {
+    width: 50%;
+    text-align: center;
 }
 
 .description-about > p {
     text-align: left;
+}
+
+@media (max-width: 576px) {
+    .About {
+        color: red;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .About {
+        color: green;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    .About {
+        color: blue;
+    }
 }
 

@@ -4,13 +4,14 @@ import React from "react";
 
 const About = () => {
     return(
-        <div className="About">
-            <div className="whole-about">
-                <div className="image-about">  
+        <div className="About ba">
+            <div className="whole-about ba">
+                <div className="image-about ba">  
                     <img alt='about' src={about} className="dim pointer"/>
                 </div>
-                <div className="description-about">
-                    <h1>About This Project</h1>
+                <div className="description-about ba">
+                    <section className='ba'>
+                    <h1>Thank You</h1>
                     <p>
                         Thank you for taking the time to checkout this project.   
                     </p>
@@ -26,6 +27,7 @@ const About = () => {
                     <p>
                     There is definately a lot more that could be added to this project but overall all in all, I'd like to thank you for taking the time to check it out.
                     </p>
+                    </section>
                 </div>
             </div>
         </div>
