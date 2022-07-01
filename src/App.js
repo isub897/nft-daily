@@ -17,11 +17,29 @@ class App extends React.Component {
     this.setState({route: route})
   }
   
+  onDropdownChange = () => {
+    document.getElementById("myDropdown-nav").classList.toggle("show");
+  }
+
+  onClickChange = (event) => {
+    if (!event.target.matches('button > img')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content-nav");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 
   render() {
     return (
-      <div className="App">
-      <Navbar onRouteChange={this.onRouteChange} />
+      <div 
+        className="App"
+        onClick={this.onClickChange}>
+      <Navbar onDropdownChange={this.onDropdownChange} onRouteChange={this.onRouteChange} />
       {this.state.route === "news"
         ?<News />
         :(this.state.route === "charts"
