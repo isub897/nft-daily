@@ -1,11 +1,18 @@
 import React from "react";
 import './Dropdown.css'
 
-const Dropdown = ({onRouteChange}) => {
+const Dropdown = ({onDropdown, onRouteChange}) => {
     return(
-        <div className="dropdown">
-            <button className="dropbtn pv2">Last 24 hours</button><i className="arrow down"></i>
-            <div className="dropdown-content">
+        <div 
+        className="dropdown"
+        onClick={onDropdown}>
+            <button 
+            className="dropbtn pv2"
+            >
+                Last 24 hours
+            </button>
+            <i className="arrow down"></i>
+            <div id="myDropdown" className="dropdown-content">
                 <a 
                 onClick={()=> onRouteChange("24hr")}
                 href="#link0">Last 24 hours</a>
