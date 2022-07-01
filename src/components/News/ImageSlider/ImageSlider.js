@@ -9,7 +9,7 @@ const ImageSlider = ({urlRedirect, storyData}) => {
     return(
 
         <div className="image-slider">
-            <div className="row justify-content-center shadow-5">
+            <div className="row justify-content-center">
                 <div className="description-container
                             col-8 order-2
                             col-sm-4 order-sm-1

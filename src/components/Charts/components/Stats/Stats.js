@@ -11,8 +11,8 @@ const Stats = ({urlRedirect, list}) => {
             <table id="customers">
                 <tbody>
                 <tr>
-                    <th className="left-end"></th>
-                    <th>Collection</th>
+                    <th className="left-end">Collection</th>
+                    {/* <th></th> */}
                     <th>Volume</th>
                     <th>Total Trades</th>
                     <th className="right-end">Floor</th>
@@ -26,10 +26,11 @@ const Stats = ({urlRedirect, list}) => {
                                 <tr key = {index} 
                                 onClick = {()=> urlRedirect(item.collection_url)}>
                                     <td className="rank">
-                                        <img alt="nft" src="" />
-                                        <h2 className="pt3 ml4">{index+1}</h2>
+                                        <img alt="nft" src=""/>
+                                        <h2>{index+1}</h2>   
+                                        <p className="collection-name">{item.collection_name}</p>   
                                     </td>
-                                    <td>{item.collection_name}</td>
+                                    {/* <td></td> */}
                                     <td>{item.volume}</td>
                                     <td>{item.trades}</td>
                                     <td className= 'floor'>

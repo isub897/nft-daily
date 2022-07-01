@@ -93,8 +93,7 @@ a {
 
 @media (min-width: 576px) and (max-width: 768px) {
     .story-list {
-        border-color: red;
-        width: 80%;
+        width: 100%;
     }
 
     .story-list > a > .story > .story-description > h3 {
