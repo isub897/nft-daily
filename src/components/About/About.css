@@ -3,7 +3,6 @@
 }
 
 .whole-about {
-    text-align: center;
     display: inline-block;
 }
 
@@ -20,35 +19,31 @@
 
 .description-about {
     /* max-width: 500px; */
-    display: flex;
-    justify-content: center;
+    display: inline-block;
     width: fit-content;
-}
-
-section {
-    width: 50%;
-    text-align: center;
 }
 
 .description-about > p {
     text-align: left;
 }
 
-@media (max-width: 576px) {
-    .About {
-        color: red;
+@media (min-width: 993px) {
+
+    .description-about {
+        /* width: 50%; */
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
-    .About {
-        color: green;
+@media (min-width: 1200px) {
+
+    .description-about {
+        /* width: 50%; */
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
 
-@media (min-width: 576px) and (max-width: 992px) {
-    .About {
-        color: blue;
-    }
-}
+
 
