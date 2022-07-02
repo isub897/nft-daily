@@ -4,16 +4,21 @@
 
 }
 
+.logo > img {
+  width: 107px;
+  height: 80px;
+}
+
 .routes {
-    width: 80%;
+    width: 100%;
     text-align: right;
     padding: 30px;
 }
 
 .logo {
     text-align: left;
-    width: 20%;
-    padding: 1em;
+    min-width: 120px;
+    padding: 0em;
 }
 
 .topnav a {
@@ -61,6 +66,7 @@
       }
       
       .dropdown-nav .dropbtn-nav {
+        cursor: pointer;
         border: none;
         outline: none;
         /* padding: 14px 16px; */

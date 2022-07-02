@@ -1,12 +1,13 @@
 import React from "react";
 import './Navbar.css'
 import dropdownImage from './Images/dropdown.webp';
+import logo from './Images/logo.png';
 
 const Navbar = ({onDropdownChange, onRouteChange}) => {
     return(
         <nav className="topnav shadow-5">
             <div className="logo">
-                <img alt="logo" src="" />
+                <img alt="logo" src={logo} />
             </div>
             <div className="routes">
                 <a  onClick={()=> onRouteChange("news")}
