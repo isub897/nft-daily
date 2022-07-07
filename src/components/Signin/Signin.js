@@ -31,7 +31,20 @@ class Signin extends React.Component {
             })
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(user => {
+            if(user.email) {
+                this.props.loadUser(user);
+                this.props.onSignedin(true);
+            } else {
+                this.props.onSignedin(false);
+            }
+        })
+    }
+
+    onKeyPress = (event) => {
+        if(event.code === "Enter") {
+            this.onSubmit();
+        }
     }
 
     render() {
@@ -43,7 +56,8 @@ class Signin extends React.Component {
                         <legend className="f4 fw6 ph0 mh0">Sign In</legend>
                         <div className="mt3">
                             <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                            <input 
+                            <input
+                                onKeyDown={this.onKeyPress} 
                                 onChange={this.onEmailChange}
                                 className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                 type="email" 
@@ -53,6 +67,7 @@ class Signin extends React.Component {
                         <div className="mv3">
                             <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                             <input 
+                                onKeyDown={this.onKeyPress}
                                 onChange={this.onPasswordChange}
                                 className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                 type="password" 
