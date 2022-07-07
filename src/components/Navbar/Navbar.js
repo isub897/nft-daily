@@ -10,6 +10,8 @@ const Navbar = ({onDropdownChange, onRouteChange}) => {
                 <img alt="logo" src={logo} />
             </div>
             <div className="routes">
+                <a  onClick={()=> onRouteChange("signin")}
+                        href="#news">Sign In</a> 
                 <a  onClick={()=> onRouteChange("news")}
                     href="#news">News</a> 
                 <a  onClick={()=> onRouteChange("charts")}
@@ -24,6 +26,8 @@ const Navbar = ({onDropdownChange, onRouteChange}) => {
                         <i className="fa fa-caret-down"></i>
                     </button>
                     <div id="myDropdown-nav" className="dropdown-content-nav">
+                        <a  onClick={()=> onRouteChange("signin")}
+                                href="#news">Sign In</a> 
                         <a  onClick={()=> onRouteChange("news")}
                             href="#news">News</a> 
                         <a  onClick={()=> onRouteChange("charts")}
