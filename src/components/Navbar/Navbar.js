@@ -3,15 +3,26 @@ import './Navbar.css'
 import dropdownImage from './Images/dropdown.webp';
 import logo from './Images/logo.png';
 
-const Navbar = ({onDropdownChange, onRouteChange}) => {
+const Navbar = ({onSignedin, signedin, onDropdownChange, onRouteChange}) => {
+
+    const onSignOut = () => {
+        onRouteChange("signin");
+        onSignedin(false);
+    }
+
     return(
         <nav className="topnav shadow-5">
             <div className="logo">
                 <img alt="logo" src={logo} />
             </div>
             <div className="routes">
-                <a  onClick={()=> onRouteChange("signin")}
-                        href="#news">Sign In</a> 
+                {signedin
+                    ?<a  onClick={onSignOut}
+                     href="#news">Sign Out</a>
+                    :<a  onClick={()=> onRouteChange("signin")}
+                     href="#news">Sign In</a>  
+                }
+ 
                 <a  onClick={()=> onRouteChange("news")}
                     href="#news">News</a> 
                 <a  onClick={()=> onRouteChange("charts")}

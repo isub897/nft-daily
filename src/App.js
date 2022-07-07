@@ -4,13 +4,21 @@ import Charts from './components/Charts/Charts';
 import News from './components/News/News';
 import About from './components/About/About';
 import Signin from './components/Signin/Signin'
+import Dashboard from './components/Dashboard/Dashboard';
 import React from 'react';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      route: "signin"
+      route: "signin",
+      signedin: false,
+      user: {
+        username: "",
+        email: "",
+        joined: "",
+        logins: ""
+      }
     }
   }
 
@@ -20,6 +28,10 @@ class App extends React.Component {
   
   onDropdownChange = () => {
     document.getElementById("myDropdown-nav").classList.toggle("show");
+  }
+
+  onSignedin = (logic) => {
+    this.setState({signedin: logic})
   }
 
   onClickChange = (event) => {
@@ -35,19 +47,30 @@ class App extends React.Component {
     }
   }
 
+  loadUser = (givenUser) => {
+    this.setState({user: givenUser});
+  }
+
   render() {
     return (
       <div 
         className="App"
         onClick={this.onClickChange}>
-      <Navbar onDropdownChange={this.onDropdownChange} onRouteChange={this.onRouteChange} />
+      <Navbar 
+        onSignedin = {this.onSignedin}
+        signedin = {this.state.signedin} 
+        onDropdownChange={this.onDropdownChange} 
+        onRouteChange={this.onRouteChange} />
       {this.state.route === "news"
         ?<News />
         :(this.state.route === "charts"
           ?<Charts />
           :(this.state.route === "about"
             ?<About />
-            :<Signin />
+            :(this.state.signedin
+              ?<Dashboard user={this.state.user} />
+              :<Signin loadUser={this.loadUser} onSignedin = {this.onSignedin} />
+            ) 
           )
         )
       }
@@ -66,5 +89,5 @@ export default App;
 //sign in
 // setup a 1min session from server-side
 
-// setup a signedin state that shows the name and dashboard and info instead of signin on navbar and dashboard
+
 // have this state backed by a cookie in the backend so taht when localhost:3000 is called, isAuth will be triggered and then signedin state will be presented on the front-end with all the user information from the previous session (something like that)
