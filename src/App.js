@@ -5,6 +5,7 @@ import News from './components/News/News';
 import About from './components/About/About';
 import Signin from './components/Signin/Signin'
 import Dashboard from './components/Dashboard/Dashboard';
+import Register from './components/Register/Register';
 import React from 'react';
 
 class App extends React.Component {
@@ -84,7 +85,17 @@ class App extends React.Component {
             ?<About />
             :(this.state.signedin
               ?<Dashboard user={this.state.user} />
-              :<Signin loadUser={this.loadUser} onSignedin = {this.onSignedin} />
+              :(this.state.route === "register"
+                ?<Register 
+                  onRouteChange={this.onRouteChange}
+                  loadUser={this.loadUser} 
+                  onSignedin = {this.onSignedin}
+                />
+                :<Signin 
+                  onRouteChange={this.onRouteChange}
+                  loadUser={this.loadUser} 
+                  onSignedin = {this.onSignedin} />
+              )
             ) 
           )
         )
@@ -100,5 +111,9 @@ export default App;
 // color palette
 // https://palettes.shecodes.io/palettes/102
 
-// pass states into navbar
-// upon each state, highlight the bottom of the navbar route at the top
+// at some stage need to setup the mailchimp for keeping their email details and when forgotten passwords
+// register route needs to be built
+// api's need to be hooked up to the api calls instead of filesystem readings
+// images need to be hooked up to all the stats (10 a day or something)
+// set the system up so i can do daily updates of the news and associated pictures, references to photos and articles
+// the user dashboard needs to be decked out a little more with functionality to update their imformation, add and delete, mayb add some photos or something
