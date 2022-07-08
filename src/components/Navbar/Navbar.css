@@ -4,6 +4,13 @@
 
 }
 
+.topnav > .logo > img:hover {
+  transition: 200ms;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #f3a333;
+  cursor: pointer;
+}
+
 .logo > img {
   width: 107px;
   height: 80px;
@@ -40,6 +47,7 @@
     width: 60px;
     height: auto;
 }
+
 
   /* col-xs and devices */
   @media (max-width: 768px)  {

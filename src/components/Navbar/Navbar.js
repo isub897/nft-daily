@@ -8,12 +8,19 @@ const Navbar = ({onSignedin, signedin, onDropdownChange, onRouteChange}) => {
     const onSignOut = () => {
         onRouteChange("signin");
         onSignedin(false);
+        fetch('http://localhost:3000/logout', {
+            credentials: 'include'
+        })
+        .catch(err => console.log("error logging out"))
     }
 
     return(
         <nav className="topnav shadow-5">
             <div className="logo">
-                <img alt="logo" src={logo} />
+                <img 
+                onClick={() => onRouteChange("dashboard")}
+                alt="logo" 
+                src={logo}/>
             </div>
             <div className="routes">
                 {signedin
