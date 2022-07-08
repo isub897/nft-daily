@@ -48,6 +48,12 @@
     height: auto;
 }
 
+.routes > .selected {
+  border-bottom-style:solid;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  border-color: #f3a333;
+}
 
   /* col-xs and devices */
   @media (max-width: 768px)  {
