@@ -70,7 +70,8 @@ class App extends React.Component {
       <div 
         className="App"
         onClick={this.onClickChange}>
-      <Navbar 
+      <Navbar
+        route={this.state.route} 
         onSignedin = {this.onSignedin}
         signedin = {this.state.signedin} 
         onDropdownChange={this.onDropdownChange} 
@@ -99,16 +100,5 @@ export default App;
 // color palette
 // https://palettes.shecodes.io/palettes/102
 
-
-//sign in
-// setup a 1min session from server-side
-
-
-// have this state backed by a cookie in the backend so taht when localhost:3000 is called, isAuth will be triggered and then signedin state will be presented on the front-end with all the user information from the previous session (something like that)
-
-//request sent
-//session created
-//cookie to be set to localhost 3001 within the login route so that it is not lost/renewed
-
-//can i set cookie to browser from th efront end
-//send the sessID from the backend
+// pass states into navbar
+// upon each state, highlight the bottom of the navbar route at the top
