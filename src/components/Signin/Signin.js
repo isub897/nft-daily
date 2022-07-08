@@ -6,8 +6,14 @@ class Signin extends React.Component {
         super();
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            notFilled: false,
+            failedSignIn: false
         }
+    }
+
+    filledInput = (result) => {
+        this.setState({})
     }
 
     onEmailChange = (event) => {
