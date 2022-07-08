@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       route: "signin",
       signedin: false,
+      sessionLoaded: false,
       user: {
         username: "",
         email: "",
@@ -20,6 +21,19 @@ class App extends React.Component {
         logins: ""
       }
     }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/dashboard', {
+      credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => { 
+      if(data[0]) {
+        this.loadUser(data[0]);
+        this.setState({signedin: true})
+      }
+    })
   }
 
   onRouteChange = (route) => {
@@ -91,3 +105,10 @@ export default App;
 
 
 // have this state backed by a cookie in the backend so taht when localhost:3000 is called, isAuth will be triggered and then signedin state will be presented on the front-end with all the user information from the previous session (something like that)
+
+//request sent
+//session created
+//cookie to be set to localhost 3001 within the login route so that it is not lost/renewed
+
+//can i set cookie to browser from th efront end
+//send the sessID from the backend

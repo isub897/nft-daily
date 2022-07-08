@@ -23,12 +23,13 @@ class Signin extends React.Component {
         fetch('http://localhost:3000/login', {
             method: 'post',
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
             },
             body: JSON.stringify({
                 email: email,
                 password: password
-            })
+            }),
+            credentials: 'include'
         })
         .then(response => response.json())
         .then(user => {
