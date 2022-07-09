@@ -21,11 +21,20 @@ class Signin extends React.Component {
     }
 
     onEmailChange = (event) => {
+        this.stateResets();
         this.setState({email: event.target.value})
     }
 
     onPasswordChange = (event) => {
+        this.stateResets();
         this.setState({password: event.target.value});
+    }
+
+    stateResets = () => {
+        this.setState({
+            notFilled: false,
+            failedSignIn: false
+        })
     }
 
     onSubmit = () => {
