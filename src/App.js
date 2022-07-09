@@ -12,14 +12,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      route: "signin",
-      signedin: false,
+      route: "dashboard",
+      signedin: true,
       sessionLoaded: false,
       user: {
-        username: "",
-        email: "",
+        username: "tom",
+        email: "tom@gmail.com",
         joined: "",
-        logins: ""
+        logins: "0"
       }
     }
   }
@@ -112,8 +112,10 @@ export default App;
 // https://palettes.shecodes.io/palettes/102
 
 // at some stage need to setup the mailchimp for keeping their email details and when forgotten passwords
-// register route needs to be built
+
 // api's need to be hooked up to the api calls instead of filesystem readings
 // images need to be hooked up to all the stats (10 a day or something)
-// set the system up so i can do daily updates of the news and associated pictures, references to photos and articles
+// set the system up so it can do daily updates of the news and associated pictures, references to photos and articles
+
+
 // the user dashboard needs to be decked out a little more with functionality to update their imformation, add and delete, mayb add some photos or something
