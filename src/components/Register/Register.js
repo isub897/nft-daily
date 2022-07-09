@@ -7,7 +7,10 @@ class Register extends React.Component {
             username: "",
             email: "",
             password: "",
-            confirm: ""
+            confirm: "",
+            notFilled: false,
+            notUnique: false,
+            notMatching: false
         }
     }
 
@@ -20,25 +23,97 @@ class Register extends React.Component {
     }
 
     onUsernameChange = (event) => {
+        this.stateResets();
         this.setState({username: event.target.value});
     }
 
     onEmailChange = (event) => {
+        this.stateResets();
         this.setState({email: event.target.value})
     }
 
     onPasswordChange = (event) => {
+        this.stateResets();
         this.setState({password: event.target.value});
     }
 
     onConfirmChange = (event) => {
+        this.stateResets();
         this.setState({confirm: event.target.value})
+        this.confirmCheck(event.target.value);
+    }
+
+    confirmCheck = (confirmPassword) => {
+        this.setState({notFilled: false})
+        if (!confirmPassword) {return this.setState({
+            notMatching: false,
+        })}
+        if(this.state.password !== confirmPassword) {
+            return this.setState({notMatching: true})
+        } else {return this.setState({notMatching: false})}
     }
 
     onKeyPress = (event) => {
         if(event.code === "Enter") {
             this.onSubmit();
         }
+    }
+
+    stateResets = () => {
+        this.setState({
+            notFilled: false,
+            notUnique: false,
+            notMatching: false
+        })
+    }
+
+    onSubmit = () => {
+        const { username, email, password, confirm } = this.state;
+        fetch('http://localhost:3000/register', {
+            method: 'post',
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password,
+                confirm: confirm
+            }),
+            credentials: 'include'
+        })
+        .then(response => response.json())
+        .then(user => {
+            if(user.email) {
+                this.setState({
+                    notFilled: false,
+                    notUnique: false,
+                    notMatching: false
+                })
+                this.props.loadUser(user);
+                this.props.onSignedin(true);
+            } else {
+                user === "fill"
+                    ? this.setState({
+                        notFilled: true,
+                        notUnique: false,
+                        notMatching: false
+                    })
+                    :(user === "duplicate"
+                        ? this.setState({
+                            notFilled: false,
+                            notUnique: true,
+                            notMatching: false
+                        })
+                        : this.setState({
+                            notFilled: false,
+                            notUnique: false,
+                            notMatching: true
+                        })
+                    ) 
+                this.props.onSignedin(false);
+            }
+        })
     }
 
     render() {
@@ -91,21 +166,26 @@ class Register extends React.Component {
                         </fieldset>
                         {this.state.notFilled
                             ?<div className="err-msg pb3 f6 red ">
-                                Please ensure both fields are filled
+                                Please ensure all fields are filled
                             </div>
-                            :(this.state.failedSignIn
+                            :(this.state.notUnique
                                 ?<div className="err-msg pb3 f6 red ">
-                                    Please enter a valid email address and password
+                                    This email address is already in use.  Please use another email address
                                 </div>
-                                :<div></div>
+                                :(this.state.notMatching
+                                    ?<div className="err-msg pb3 f6 red ">
+                                        Please ensure passwords are matching
+                                    </div>
+                                    :<div></div>
+                                )
                             )
                         }
                         <div className="">
                         <input 
                             onClick={this.onSubmit}
-                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mt2" 
                             type="button" 
-                            value="Sign in"/>
+                            value="Register"/>
                         </div>
                         <div className="lh-copy mt3">
                             <a 

@@ -113,7 +113,7 @@ class Signin extends React.Component {
                         <div className="">
                         <input 
                             onClick={this.onSubmit}
-                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mt2" 
                             type="button" 
                             value="Sign in"/>
                         </div>
